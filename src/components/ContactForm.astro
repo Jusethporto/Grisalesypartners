@@ -1,0 +1,130 @@
+---
+import { Icon } from "astro-icon/components";
+
+const info = [
+  { icon: "lucide:mail", label: "Correo", value: "contacto@grisalesypartners.com" },
+  { icon: "lucide:phone", label: "Teléfono", value: "+57 (300) 123-4567" },
+  { icon: "lucide:map-pin", label: "Dirección", value: "Av. Principal de Negocios, Torre Global, Piso 18." },
+];
+---
+
+<section id="contacto" class="bg-surface-secondary py-24">
+  <div class="mx-auto grid max-w-content gap-14 px-6 lg:grid-cols-2 lg:gap-16">
+    <div class="reveal">
+      <h2 class="font-heading text-3xl font-bold text-petrol sm:text-4xl">Inicie su transformación hoy</h2>
+      <p class="mt-3 max-w-md font-body text-ink-secondary">
+        Complete el formulario y uno de nuestros consultores senior se pondrá en contacto para una
+        sesión diagnóstica gratuita.
+      </p>
+
+      <form data-contact-form class="mt-9 space-y-5" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="name" class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary">
+              Nombre completo
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="mt-2 w-full rounded-lg border border-petrol/15 bg-surface px-4 py-3 font-body text-sm text-ink outline-none transition-colors focus:border-gold"
+            />
+          </div>
+          <div>
+            <label for="company" class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary">
+              Empresa
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              required
+              class="mt-2 w-full rounded-lg border border-petrol/15 bg-surface px-4 py-3 font-body text-sm text-ink outline-none transition-colors focus:border-gold"
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="email" class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary">
+              Correo
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="mt-2 w-full rounded-lg border border-petrol/15 bg-surface px-4 py-3 font-body text-sm text-ink outline-none transition-colors focus:border-gold"
+            />
+          </div>
+          <div>
+            <label for="phone" class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary">
+              Teléfono
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              class="mt-2 w-full rounded-lg border border-petrol/15 bg-surface px-4 py-3 font-body text-sm text-ink outline-none transition-colors focus:border-gold"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary">
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="mt-2 w-full resize-none rounded-lg border border-petrol/15 bg-surface px-4 py-3 font-body text-sm text-ink outline-none transition-colors focus:border-gold"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full rounded-lg bg-petrol px-6 py-3.5 font-heading text-sm font-semibold text-white transition-colors hover:bg-petrol-dark sm:w-auto sm:px-10"
+        >
+          Enviar Solicitud
+        </button>
+
+        <p data-contact-status class="hidden font-body text-sm font-medium text-petrol" role="status"></p>
+      </form>
+    </div>
+
+    <div class="reveal" style="transition-delay:120ms">
+      <h3 class="font-heading text-sm font-semibold uppercase tracking-widest text-petrol">
+        Información de Contacto
+      </h3>
+      <ul class="mt-6 space-y-5">
+        {
+          info.map((item) => (
+            <li class="flex items-start gap-4">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-petrol/5 text-petrol">
+                <Icon name={item.icon} class="h-5 w-5" />
+              </span>
+              <p class="mt-2 font-body text-sm text-ink-secondary">{item.value}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <h3 class="mt-9 font-heading text-sm font-semibold uppercase tracking-widest text-petrol">
+        Horarios de Atención
+      </h3>
+      <p class="mt-3 font-body text-sm text-ink-secondary">Lunes a Viernes: 08:00 AM – 06:00 PM</p>
+      <p class="mt-1 font-body text-sm text-ink-secondary">Sábados (previo acuerdo): 09:00 AM – 12:00 PM</p>
+
+      <div
+        class="mt-8 flex h-56 items-center justify-center rounded-2xl border border-petrol/10 bg-gradient-to-br from-petrol/5 to-gold/10"
+      >
+        <Icon name="lucide:map-pin" class="h-8 w-8 text-petrol/30" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/contact-form.ts"></script>

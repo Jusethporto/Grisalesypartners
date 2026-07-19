@@ -1,0 +1,51 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Diagnóstico",
+    description: "Auditoría profunda de la situación actual y detección de fugas de capital.",
+  },
+  {
+    number: "02",
+    title: "Estrategia",
+    description: "Diseño de una hoja de ruta financiera alineada a objetivos de crecimiento.",
+  },
+  {
+    number: "03",
+    title: "Implementación",
+    description: "Acompañamiento en la ejecución de cambios y optimización de procesos.",
+  },
+  {
+    number: "04",
+    title: "Seguimiento",
+    description: "Monitoreo continuo de KPIs para asegurar la sostenibilidad del modelo.",
+  },
+];
+---
+
+<section id="metodologia" class="bg-surface py-24">
+  <div class="mx-auto max-w-content px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="font-body text-xs font-semibold uppercase tracking-widest text-gold">Cómo trabajamos</p>
+      <h2 class="mt-3 font-heading text-3xl font-bold text-petrol sm:text-4xl">Nuestra Metodología</h2>
+      <p class="mt-4 font-body text-ink-secondary">Un proceso riguroso para resultados exponenciales.</p>
+    </div>
+
+    <div class="reveal-stagger relative mt-20 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="pointer-events-none absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-gold-light to-transparent lg:block"></div>
+      {
+        steps.map((step) => (
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-petrol font-heading text-sm font-bold text-white shadow-card">
+              {step.number}
+            </div>
+            <h3 class="mt-6 font-heading text-lg font-semibold text-petrol">{step.title}</h3>
+            <p class="mx-auto mt-2 max-w-[15rem] font-body text-sm leading-relaxed text-ink-secondary">
+              {step.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

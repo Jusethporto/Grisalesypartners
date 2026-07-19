@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon/components";
+
+const problems = [
+  {
+    title: "Falta de liquidez",
+    description: "A pesar de tener ventas altas, el efectivo no se refleja en bancos.",
+  },
+  {
+    title: "Problemas de flujo de caja",
+    description: "Gestión táctica de entradas y salidas de capital que no está alineada con la operación.",
+  },
+  {
+    title: "Capital de trabajo insuficiente",
+    description: "Estructuración financiera que no soporta el ritmo real de crecimiento.",
+  },
+  {
+    title: "Cartera difícil de recuperar",
+    description: "Plazos de cobranza excesivos que inmovilizan el capital de trabajo.",
+  },
+  {
+    title: "Falta de planificación financiera",
+    description: "Ausencia de hojas de ruta basadas en datos reales y proyecciones confiables.",
+  },
+  {
+    title: "Baja eficiencia operativa",
+    description: "Costos y márgenes sin optimizar frente a un mercado cada vez más exigente.",
+  },
+];
+---
+
+<section class="bg-surface-secondary py-24">
+  <div class="mx-auto grid max-w-content items-start gap-14 px-6 lg:grid-cols-2 lg:gap-16">
+    <div class="reveal">
+      <h2 class="text-balance font-heading text-3xl font-bold leading-tight text-petrol sm:text-4xl">
+        Solucionamos los cuellos de botella financieros
+      </h2>
+
+      <ul class="reveal-stagger mt-10 space-y-6">
+        {
+          problems.map((problem) => (
+            <li class="flex items-start gap-4">
+              <Icon name="lucide:check-circle-2" class="mt-0.5 h-5 w-5 flex-shrink-0 text-gold" />
+              <div>
+                <h4 class="font-heading text-lg font-semibold text-petrol">{problem.title}</h4>
+                <p class="mt-1 font-body text-sm leading-relaxed text-ink-secondary">{problem.description}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="reveal lg:sticky lg:top-32" style="transition-delay:120ms">
+      <div class="rounded-3xl bg-petrol p-10 text-white shadow-card sm:p-12">
+        <Icon name="lucide:quote" class="h-8 w-8 text-gold/40" />
+        <p class="mt-6 text-balance font-heading text-2xl font-semibold leading-snug">
+          Convertimos información financiera compleja en decisiones estratégicas que fortalecen la
+          liquidez, el flujo de caja y la sostenibilidad empresarial.
+        </p>
+        <div class="mt-8 flex items-center gap-3 border-t border-white/10 pt-6">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gold">
+            <Icon name="lucide:shield-check" class="h-5 w-5" />
+          </span>
+          <div>
+            <p class="font-body text-xs font-semibold uppercase tracking-widest text-gold">Dirección General</p>
+            <p class="font-body text-sm text-white/70">Grisales &amp; Partners</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

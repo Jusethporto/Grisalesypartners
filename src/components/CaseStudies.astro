@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon/components";
+
+const cases = [
+  {
+    sector: "Manufactura",
+    title: "Optimización de Activos Circulantes",
+    challenge: "Capital de trabajo inmovilizado en inventario y cartera vencida.",
+    solution: "Rediseño del ciclo de conversión de efectivo y renegociación de plazos.",
+    metrics: [
+      { label: "Liquidez", value: "+35%" },
+      { label: "Ciclo de cobro", value: "-40%" },
+    ],
+  },
+  {
+    sector: "Servicios",
+    title: "Reestructuración de Capital",
+    challenge: "Estructura de deuda desalineada con el flujo de caja operativo.",
+    solution: "Refinanciación estratégica y modelo de proyección financiera a 24 meses.",
+    metrics: [
+      { label: "Flujo de caja", value: "+20%" },
+      { label: "ROI", value: "+15%" },
+    ],
+  },
+  {
+    sector: "Logística",
+    title: "Inteligencia de Datos Financieros",
+    challenge: "Decisiones basadas en reportes manuales y desactualizados.",
+    solution: "Implementación de tablero de control financiero en tiempo real.",
+    metrics: [
+      { label: "Margen neto", value: "+28%" },
+      { label: "Costos operativos", value: "-25%" },
+    ],
+  },
+];
+---
+
+<section id="casos-de-exito" class="bg-surface-secondary py-24">
+  <div class="mx-auto max-w-content px-6" data-carousel>
+    <div class="reveal flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="font-body text-xs font-semibold uppercase tracking-widest text-gold">Resultados reales</p>
+        <h2 class="mt-3 font-heading text-3xl font-bold text-petrol sm:text-4xl">Casos de Éxito</h2>
+        <p class="mt-3 max-w-md font-body text-ink-secondary">
+          Resultados tangibles logrados en diversas industrias del sector empresarial.
+        </p>
+      </div>
+      <div class="flex gap-3 self-start sm:self-auto lg:hidden">
+        <button
+          type="button"
+          data-carousel-prev
+          aria-label="Caso anterior"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-petrol/15 text-petrol transition-colors hover:bg-petrol hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-petrol"
+        >
+          <Icon name="lucide:chevron-left" class="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          data-carousel-next
+          aria-label="Siguiente caso"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-petrol/15 text-petrol transition-colors hover:bg-petrol hover:text-white disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-petrol"
+        >
+          <Icon name="lucide:chevron-right" class="h-5 w-5" />
+        </button>
+      </div>
+    </div>
+
+    <div
+      data-carousel-track
+      class="reveal mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      style="transition-delay:120ms"
+    >
+        {
+          cases.map((item) => (
+            <article
+              data-carousel-card
+              class="w-[85%] flex-shrink-0 snap-start rounded-2xl border border-petrol/10 bg-surface p-8 shadow-subtle sm:w-[60%] lg:w-[calc(33.333%-1rem)]"
+            >
+              <span class="font-body text-xs font-semibold uppercase tracking-widest text-gold">
+                Sector {item.sector}
+              </span>
+              <h3 class="mt-3 font-heading text-xl font-semibold text-petrol">{item.title}</h3>
+
+              <dl class="mt-5 space-y-3 border-t border-petrol/10 pt-5">
+                <div>
+                  <dt class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary/70">
+                    Desafío
+                  </dt>
+                  <dd class="mt-1 font-body text-sm text-ink-secondary">{item.challenge}</dd>
+                </div>
+                <div>
+                  <dt class="font-body text-xs font-semibold uppercase tracking-widest text-ink-secondary/70">
+                    Solución
+                  </dt>
+                  <dd class="mt-1 font-body text-sm text-ink-secondary">{item.solution}</dd>
+                </div>
+              </dl>
+
+              <div class="mt-6 flex gap-3">
+                {
+                  item.metrics.map((metric) => (
+                    <div class="flex-1 rounded-xl bg-surface-secondary px-4 py-3 text-center">
+                      <p class="font-heading text-lg font-bold text-petrol">{metric.value}</p>
+                      <p class="font-body text-[0.65rem] uppercase tracking-widest text-ink-secondary">
+                        {metric.label}
+                      </p>
+                    </div>
+                  ))
+                }
+              </div>
+            </article>
+          ))
+        }
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/carousel.ts"></script>

@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+
+const services = [
+  {
+    icon: "lucide:trending-up",
+    title: "Consultoría Financiera",
+    description:
+      "Análisis profundo de estructuras de capital y diagnóstico situacional para maximizar el valor de la organización a largo plazo.",
+  },
+  {
+    icon: "lucide:wallet",
+    title: "Optimización del Flujo de Caja",
+    description:
+      "Estrategias tácticas para liberar recursos atrapados en el ciclo operativo y mejorar la capacidad de maniobra inmediata.",
+  },
+  {
+    icon: "lucide:bar-chart-3",
+    title: "Inteligencia Financiera",
+    description:
+      "Implementación de tableros de control y KPIs críticos que permiten decisiones basadas en datos precisos, no en supuestos.",
+  },
+  {
+    icon: "lucide:building-2",
+    title: "Transformación Empresarial",
+    description:
+      "Reestructuración de procesos financieros para adaptarse a las demandas de un mercado institucional global.",
+  },
+];
+---
+
+<section id="servicios" class="bg-surface py-24">
+  <div class="mx-auto max-w-content px-6">
+    <div class="reveal mx-auto max-w-2xl text-center">
+      <p class="font-body text-xs font-semibold uppercase tracking-widest text-gold">Lo que hacemos</p>
+      <h2 class="mt-3 font-heading text-3xl font-bold text-petrol sm:text-4xl">Servicios Estratégicos</h2>
+      <div class="mx-auto mt-5 h-px w-16 bg-gold-light"></div>
+    </div>
+
+    <div class="reveal-stagger mt-16 grid gap-6 sm:grid-cols-2">
+      {
+        services.map((service) => (
+          <div class="group rounded-2xl border border-petrol/10 bg-surface p-8 shadow-subtle transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-card">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-petrol/5 text-petrol transition-colors duration-300 group-hover:bg-gold/15 group-hover:text-gold">
+              <Icon name={service.icon} class="h-6 w-6" />
+            </span>
+            <h3 class="mt-6 font-heading text-xl font-semibold text-petrol">{service.title}</h3>
+            <p class="mt-3 font-body leading-relaxed text-ink-secondary">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

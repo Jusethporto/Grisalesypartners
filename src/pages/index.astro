@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import TrustIndicators from "../components/TrustIndicators.astro";
+import Services from "../components/Services.astro";
+import Problems from "../components/Problems.astro";
+import Methodology from "../components/Methodology.astro";
+import CaseStudies from "../components/CaseStudies.astro";
+import Values from "../components/Values.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import ContactForm from "../components/ContactForm.astro";
+import BrandStatement from "../components/BrandStatement.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Grisales & Partners — Transformamos utilidades en liquidez"
+  description="Firma boutique de consultoría financiera especializada en transformar rentabilidad en liquidez sostenible mediante estrategias financieras inteligentes."
+>
+  <Navbar />
+  <main>
+    <Hero />
+    <TrustIndicators />
+    <Services />
+    <Problems />
+    <Methodology />
+    <CaseStudies />
+    <Values />
+    <CtaBanner />
+    <ContactForm />
+    <BrandStatement />
+  </main>
+  <Footer />
+</Layout>
