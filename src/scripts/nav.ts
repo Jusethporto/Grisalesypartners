@@ -1,20 +1,28 @@
 const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+const panelWrapper = document.querySelector<HTMLElement>("[data-nav-panel-wrapper]");
 const panel = document.querySelector<HTMLElement>("[data-nav-panel]");
 const nav = document.querySelector<HTMLElement>("[data-navbar]");
 
+const setOpen = (open: boolean) => {
+  toggle?.setAttribute("aria-expanded", String(open));
+  panelWrapper?.setAttribute("data-open", String(open));
+  if (panel) panel.inert = !open;
+};
+
 toggle?.addEventListener("click", () => {
-  const isOpen = panel?.classList.toggle("flex");
-  panel?.classList.toggle("hidden");
-  toggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+  const isOpen = toggle.getAttribute("aria-expanded") === "true";
+  setOpen(!isOpen);
 });
 
 panel?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    panel.classList.add("hidden");
-    panel.classList.remove("flex");
-    toggle?.setAttribute("aria-expanded", "false");
-  });
+  link.addEventListener("click", () => setOpen(false));
 });
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setOpen(false);
+});
+
+setOpen(false);
 
 let lastScroll = 0;
 window.addEventListener(
