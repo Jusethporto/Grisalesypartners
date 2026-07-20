@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "grisalesandpartners",
+  "compatibility_date": "2026-07-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "send_email": [
+    {
+      "name": "SEND_EMAIL",
+      "destination_address": "contacto@grisalesandpartners.com"
+    }
+  ]
+}
