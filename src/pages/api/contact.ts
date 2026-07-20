@@ -6,7 +6,6 @@ import { createMimeMessage, Mailbox } from "mimetext/browser";
 export const prerender = false;
 
 const FROM_ADDRESS = "formulario@grisalesandpartners.com";
-const TO_ADDRESS = "contacto@grisalesandpartners.com";
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function jsonResponse(body: Record<string, unknown>, status: number) {
@@ -17,6 +16,12 @@ function jsonResponse(body: Record<string, unknown>, status: number) {
 }
 
 export const POST: APIRoute = async ({ request }) => {
+  const toAddress = env.CONTACT_TO_EMAIL;
+  if (!toAddress) {
+    console.error("CONTACT_TO_EMAIL secret is not configured");
+    return jsonResponse({ error: "El formulario no está disponible en este momento." }, 500);
+  }
+
   let form: FormData;
   try {
     form = await request.formData();
@@ -40,7 +45,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const mime = createMimeMessage();
   mime.setSender({ name: "Formulario Web — Grisales & Partners", addr: FROM_ADDRESS });
-  mime.setRecipient(TO_ADDRESS);
+  mime.setRecipient(toAddress);
   mime.setHeader("Reply-To", new Mailbox({ name, addr: email }));
   mime.setSubject(`Nueva solicitud de contacto — ${name}`);
   mime.addMessage({
@@ -56,7 +61,7 @@ export const POST: APIRoute = async ({ request }) => {
     ].join("\n"),
   });
 
-  const emailMessage = new EmailMessage(FROM_ADDRESS, TO_ADDRESS, mime.asRaw());
+  const emailMessage = new EmailMessage(FROM_ADDRESS, toAddress, mime.asRaw());
 
   try {
     await env.SEND_EMAIL.send(emailMessage);

@@ -5,8 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "send_email": [
     {
-      "name": "SEND_EMAIL",
-      "destination_address": "contacto@grisalesandpartners.com"
+      "name": "SEND_EMAIL"
     }
   ]
 }
