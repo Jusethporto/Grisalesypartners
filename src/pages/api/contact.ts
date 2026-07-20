@@ -16,7 +16,7 @@ function jsonResponse(body: Record<string, unknown>, status: number) {
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const toAddress = env.CONTACT_TO_EMAIL;
+  const toAddress = env.CONTACT_TO_EMAIL?.trim();
   if (!toAddress) {
     console.error("CONTACT_TO_EMAIL secret is not configured");
     return jsonResponse({ error: "El formulario no está disponible en este momento." }, 500);
@@ -66,7 +66,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     await env.SEND_EMAIL.send(emailMessage);
   } catch (error) {
-    console.error("Failed to send contact form email", error);
+    console.error("Failed to send contact form email. Resolved toAddress:", JSON.stringify(toAddress), error);
     return jsonResponse({ error: "No se pudo enviar el mensaje. Intenta de nuevo más tarde." }, 502);
   }
 
