@@ -3,12 +3,17 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev dist --port 8788",
+    "deploy": "pnpm build && wrangler pages deploy dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -20,5 +25,9 @@
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
+  "devDependencies": {
+    "wrangler": "^4.112.0"
   }
 }

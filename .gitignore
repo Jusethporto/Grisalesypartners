@@ -7,6 +7,9 @@ dist/
 # dependencies
 node_modules/
 
+# wrangler local state
+.wrangler/
+
 # logs
 npm-debug.log*
 
@@ -16,3 +19,7 @@ npm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# local agent tooling state
+.claude/
+.atl/
