@@ -66,7 +66,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     await env.SEND_EMAIL.send(emailMessage);
   } catch (error) {
-    console.error("Failed to send contact form email. Resolved toAddress:", JSON.stringify(toAddress), error);
+    console.error("Failed to send contact form email", error);
     return jsonResponse({ error: "No se pudo enviar el mensaje. Intenta de nuevo más tarde." }, 502);
   }
 
