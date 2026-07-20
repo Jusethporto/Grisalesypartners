@@ -90,8 +90,6 @@ const info = [
         >
           Enviar Solicitud
         </button>
-
-        <p data-contact-status class="hidden font-body text-sm font-medium text-petrol" role="status"></p>
       </form>
     </div>
 
@@ -125,6 +123,91 @@ const info = [
       </div>
     </div>
   </div>
+
+  <div
+    data-contact-modal
+    class="contact-modal fixed inset-0 z-[60] flex items-center justify-center bg-petrol-dark/60 p-6 backdrop-blur-sm"
+  >
+    <div
+      data-contact-modal-panel
+      class="contact-modal-panel relative w-full max-w-sm rounded-2xl bg-surface p-8 text-center shadow-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+    >
+      <button
+        type="button"
+        data-contact-modal-close
+        aria-label="Cerrar"
+        class="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-ink-secondary transition-colors hover:bg-surface-secondary hover:text-petrol"
+      >
+        <Icon name="lucide:x" class="h-4 w-4" />
+      </button>
+
+      <span
+        data-contact-modal-icon="success"
+        class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"
+      >
+        <Icon name="lucide:circle-check-big" class="h-7 w-7" />
+      </span>
+      <span
+        data-contact-modal-icon="error"
+        class="mx-auto hidden h-14 w-14 items-center justify-center rounded-full bg-red-50 text-red-600"
+      >
+        <Icon name="lucide:circle-x" class="h-7 w-7" />
+      </span>
+
+      <h3 id="contact-modal-title" data-contact-modal-title class="mt-5 font-heading text-lg font-bold text-petrol">
+      </h3>
+      <p data-contact-modal-message class="mt-2 font-body text-sm text-ink-secondary"></p>
+
+      <button
+        type="button"
+        data-contact-modal-close
+        class="mt-7 w-full rounded-lg bg-petrol px-6 py-3 font-heading text-sm font-semibold text-white transition-colors hover:bg-petrol-dark"
+      >
+        Cerrar
+      </button>
+    </div>
+  </div>
 </section>
+
+<style>
+  .contact-modal {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0s linear 0.3s;
+  }
+
+  .contact-modal[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.3s ease,
+      visibility 0s linear 0s;
+  }
+
+  .contact-modal-panel {
+    transform: scale(0.94) translateY(10px);
+    opacity: 0;
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .contact-modal[data-open="true"] .contact-modal-panel {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-modal,
+    .contact-modal-panel {
+      transition: none !important;
+    }
+  }
+</style>
 
 <script src="../scripts/contact-form.ts"></script>
