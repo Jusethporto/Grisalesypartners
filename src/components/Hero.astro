@@ -8,7 +8,7 @@ const highlights = [
 ] as const;
 ---
 
-<section id="inicio" class="relative overflow-hidden bg-surface pb-24 pt-36 sm:pt-40">
+<section id="inicio" class="relative overflow-hidden bg-surface pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-16 lg:pt-24">
   <div
     class="pointer-events-none absolute -right-40 -top-20 h-[32rem] w-[32rem] rounded-full bg-gold/10 blur-3xl"
     aria-hidden="true"
@@ -22,14 +22,7 @@ const highlights = [
 
   <div class="relative mx-auto grid max-w-content items-center gap-16 px-6 lg:grid-cols-2 lg:gap-12">
     <div class="reveal max-w-xl">
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-widest text-petrol"
-      >
-        <Icon name="lucide:shield-check" class="h-3.5 w-3.5 text-gold" />
-        Firma Boutique de Consultoría Financiera
-      </span>
-
-      <h1 class="mt-6 text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol sm:text-5xl lg:text-[3.4rem]">
+      <h1 class="text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol sm:text-5xl lg:text-[3.4rem]">
         Transformamos <span class="text-gold">utilidades</span> en liquidez.
       </h1>
 
@@ -71,24 +64,21 @@ const highlights = [
 
     <div class="reveal relative" style="transition-delay:120ms">
       <div
-        class="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-petrol/10 via-transparent to-gold/15 sm:-inset-6"
+        class="pointer-events-none absolute inset-x-10 top-6 -z-10 aspect-square rounded-full bg-gradient-to-br from-petrol/10 via-transparent to-gold/15 blur-3xl"
         aria-hidden="true"
       >
       </div>
 
-      <div class="relative aspect-[4/5] overflow-hidden rounded-3xl border border-petrol/10 shadow-card">
-        <img
-          src="/team/consultor-principal.png"
-          alt="Consultor principal de Grisales & Partners"
-          width="1402"
-          height="1122"
-          class="h-full w-full object-cover object-center"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-petrol-dark/25 via-transparent to-transparent"></div>
-      </div>
+      <img
+        src="/team/consultor-principal.png"
+        alt="Consultor principal de Grisales & Partners"
+        width="1402"
+        height="1122"
+        class="hero-portrait mx-auto aspect-[4/5] w-full max-w-sm object-cover object-center lg:aspect-[4/3] lg:max-w-none"
+      />
 
       <div
-        class="absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex"
+        class="absolute bottom-[20%] left-1/2 hidden -translate-x-1/2 items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex lg:left-0 lg:translate-x-0"
       >
         <span class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
           <Icon name="lucide:award" class="h-5 w-5" />
@@ -101,3 +91,10 @@ const highlights = [
     </div>
   </div>
 </section>
+
+<style>
+  .hero-portrait {
+    mask-image: linear-gradient(to bottom, black 68%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 68%, transparent 100%);
+  }
+</style>
