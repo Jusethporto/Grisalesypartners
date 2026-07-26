@@ -2,23 +2,18 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="inicio" class="relative overflow-hidden bg-surface pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-16 lg:pt-24">
-  <img
-    src="/backgrounds/hero-background.svg"
-    alt=""
-    aria-hidden="true"
-    class="absolute inset-0 hidden h-full w-full object-cover object-right sm:block"
-  />
-
-  <div class="relative mx-auto max-w-content px-6">
+<section id="inicio" class="relative overflow-hidden bg-surface">
+  <div class="sm:hidden">
     <img
-      src="/backgrounds/hero-background.svg"
+      src="/backgrounds/hero-background.png"
       alt="Consultor principal de Grisales & Partners"
-      class="mb-8 h-56 w-full rounded-2xl object-cover object-[78%_22%] sm:hidden"
+      width="1719"
+      height="915"
+      class="h-auto w-full"
     />
 
-    <div class="reveal max-w-xl">
-      <h1 class="text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol sm:text-5xl lg:text-[3.4rem]">
+    <div class="reveal px-6 pb-16 pt-10">
+      <h1 class="text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol">
         Transformamos <span class="text-gold">utilidades</span> en liquidez.
       </h1>
 
@@ -28,7 +23,7 @@ import { Icon } from "astro-icon/components";
         eficiente de liquidez.
       </p>
 
-      <div class="mt-9 flex flex-col gap-3.5 sm:flex-row">
+      <div class="mt-9 flex flex-col gap-3.5">
         <a
           href="#contacto"
           class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-heading text-sm font-semibold text-petrol-dark shadow-subtle transition-all hover:scale-[1.02] hover:shadow-gold"
@@ -44,9 +39,51 @@ import { Icon } from "astro-icon/components";
         </a>
       </div>
     </div>
+  </div>
+
+  <div class="relative hidden sm:block">
+    <img
+      src="/backgrounds/hero-background.png"
+      alt="Consultor principal de Grisales & Partners"
+      width="1719"
+      height="915"
+      class="h-auto w-full"
+    />
+
+    <div class="absolute inset-0 flex items-center">
+      <div class="mx-auto w-full max-w-content px-6">
+        <div class="reveal max-w-xl">
+          <h1 class="text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol lg:text-[3.4rem]">
+            Transformamos <span class="text-gold">utilidades</span> en liquidez.
+          </h1>
+
+          <p class="mt-6 max-w-lg font-body text-lg leading-relaxed text-ink-secondary">
+            Ayudamos a las empresas a convertir su rentabilidad en crecimiento sostenible mediante
+            estrategias financieras inteligentes, optimización del capital de trabajo y gestión
+            eficiente de liquidez.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3.5 sm:flex-row">
+            <a
+              href="#contacto"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-heading text-sm font-semibold text-petrol-dark shadow-subtle transition-all hover:scale-[1.02] hover:shadow-gold"
+            >
+              Agenda una asesoría
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </a>
+            <a
+              href="#servicios"
+              class="inline-flex items-center justify-center rounded-full border border-petrol/15 px-7 py-3.5 font-heading text-sm font-semibold text-petrol transition-colors hover:bg-surface-secondary"
+            >
+              Conoce nuestros servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div
-      class="reveal absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex lg:right-12"
+      class="reveal absolute right-6 top-1/2 z-10 flex -translate-y-1/2 items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card lg:right-12"
       style="transition-delay:120ms"
     >
       <span class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
