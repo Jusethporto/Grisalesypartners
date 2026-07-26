@@ -4,6 +4,11 @@ import { Icon } from "astro-icon/components";
 
 <section id="inicio" class="relative overflow-hidden bg-surface pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-16 lg:pt-24">
   <div
+    class="hero-silhouette pointer-events-none absolute inset-y-0 right-0 -z-20 w-full max-w-3xl bg-petrol/[0.07]"
+    aria-hidden="true"
+  >
+  </div>
+  <div
     class="pointer-events-none absolute -right-40 -top-20 h-[32rem] w-[32rem] rounded-full bg-gold/10 blur-3xl"
     aria-hidden="true"
   >
@@ -59,7 +64,7 @@ import { Icon } from "astro-icon/components";
       />
 
       <div
-        class="absolute bottom-2 -left-4 hidden items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex"
+        class="absolute bottom-2 -left-4 z-10 hidden items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex"
       >
         <span class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
           <Icon name="lucide:award" class="h-5 w-5" />
@@ -72,3 +77,16 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </section>
+
+<style>
+  .hero-silhouette {
+    mask-image: url("/backgrounds/hero-silhouette.svg");
+    mask-repeat: no-repeat;
+    mask-position: right center;
+    mask-size: cover;
+    -webkit-mask-image: url("/backgrounds/hero-silhouette.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: right center;
+    -webkit-mask-size: cover;
+  }
+</style>
