@@ -11,29 +11,23 @@ const fields = [
 
 <section id="contacto" class="relative overflow-hidden bg-surface-secondary py-20 sm:py-24 lg:py-28">
   <div
-    class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl sm:h-96 sm:w-96"
+    class="pointer-events-none absolute -right-40 -top-20 h-[32rem] w-[32rem] rounded-full bg-gold/10 blur-3xl"
     aria-hidden="true"
   >
   </div>
   <div
-    class="pointer-events-none absolute -bottom-32 -right-16 h-64 w-64 rounded-full bg-petrol/10 blur-3xl sm:h-80 sm:w-80"
+    class="pointer-events-none absolute left-0 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-petrol/5 blur-3xl"
     aria-hidden="true"
   >
   </div>
 
-  <div class="relative mx-auto max-w-2xl px-6">
-    <div class="reveal text-center">
-      <span
-        class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-widest text-petrol"
-      >
-        <Icon name="lucide:message-circle" class="h-3.5 w-3.5 text-gold" />
-        Hablemos
-      </span>
-      <h2 class="mt-5 text-balance font-heading text-3xl font-bold leading-tight text-petrol sm:text-4xl lg:text-[2.75rem]">
+  <div class="relative mx-auto grid max-w-content items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+    <div class="reveal text-center lg:text-left">
+      <h2 class="text-balance font-heading text-3xl font-bold leading-tight text-petrol sm:text-4xl">
         Inicie su transformación <span class="text-gold">hoy</span>
       </h2>
-      <div class="mx-auto mt-5 h-px w-16 bg-gold-light"></div>
-      <p class="mx-auto mt-5 max-w-md font-body text-ink-secondary sm:text-lg">
+      <div class="mx-auto mt-5 h-px w-16 bg-gold-light lg:mx-0"></div>
+      <p class="mx-auto mt-5 max-w-md font-body text-ink-secondary sm:text-lg lg:mx-0">
         Complete el formulario y uno de nuestros consultores senior se pondrá en contacto para una
         sesión diagnóstica gratuita.
       </p>
@@ -41,7 +35,7 @@ const fields = [
 
     <form
       data-contact-form
-      class="reveal mt-10 space-y-5 rounded-2xl border border-petrol/10 bg-surface p-7 shadow-card sm:p-9"
+      class="reveal space-y-5 rounded-2xl border border-petrol/10 bg-surface p-7 shadow-card sm:p-9"
       style="transition-delay:120ms"
       novalidate
     >
