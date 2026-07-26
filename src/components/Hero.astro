@@ -3,23 +3,20 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section id="inicio" class="relative overflow-hidden bg-surface pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-16 lg:pt-24">
-  <div
-    class="hero-silhouette pointer-events-none absolute inset-y-0 right-0 -z-20 w-full max-w-3xl bg-petrol/[0.07]"
+  <img
+    src="/backgrounds/hero-background.svg"
+    alt=""
     aria-hidden="true"
-  >
-  </div>
-  <div
-    class="pointer-events-none absolute -right-40 -top-20 h-[32rem] w-[32rem] rounded-full bg-gold/10 blur-3xl"
-    aria-hidden="true"
-  >
-  </div>
-  <div
-    class="pointer-events-none absolute left-0 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-petrol/5 blur-3xl"
-    aria-hidden="true"
-  >
-  </div>
+    class="absolute inset-0 hidden h-full w-full object-cover object-right sm:block"
+  />
 
-  <div class="relative mx-auto grid max-w-content items-center gap-16 px-6 lg:grid-cols-2 lg:gap-12">
+  <div class="relative mx-auto max-w-content px-6">
+    <img
+      src="/backgrounds/hero-background.svg"
+      alt="Consultor principal de Grisales & Partners"
+      class="mb-8 h-56 w-full rounded-2xl object-cover object-[78%_22%] sm:hidden"
+    />
+
     <div class="reveal max-w-xl">
       <h1 class="text-balance font-heading text-4xl font-bold leading-[1.1] text-petrol sm:text-5xl lg:text-[3.4rem]">
         Transformamos <span class="text-gold">utilidades</span> en liquidez.
@@ -48,45 +45,17 @@ import { Icon } from "astro-icon/components";
       </div>
     </div>
 
-    <div class="reveal relative mx-auto w-fit" style="transition-delay:120ms">
-      <div
-        class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-petrol/10 via-transparent to-gold/15 blur-3xl"
-        aria-hidden="true"
-      >
-      </div>
-
-      <img
-        src="/team/consultor-hero.png"
-        alt="Consultor principal de Grisales & Partners"
-        width="1536"
-        height="1024"
-        class="aspect-[681/995] h-72 w-auto object-cover object-[54%_50%] sm:h-80 lg:h-[26rem]"
-      />
-
-      <div
-        class="absolute bottom-2 -left-4 z-10 hidden items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex"
-      >
-        <span class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
-          <Icon name="lucide:award" class="h-5 w-5" />
-        </span>
-        <div>
-          <p class="font-heading text-lg font-bold text-petrol">+12 años</p>
-          <p class="font-body text-xs text-ink-secondary">de experiencia en estrategia financiera</p>
-        </div>
+    <div
+      class="reveal absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 items-center gap-3 rounded-2xl border border-petrol/10 bg-surface px-5 py-4 shadow-card sm:flex lg:right-12"
+      style="transition-delay:120ms"
+    >
+      <span class="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+        <Icon name="lucide:award" class="h-5 w-5" />
+      </span>
+      <div>
+        <p class="font-heading text-lg font-bold text-petrol">+12 años</p>
+        <p class="font-body text-xs text-ink-secondary">de experiencia en estrategia financiera</p>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .hero-silhouette {
-    mask-image: url("/backgrounds/hero-silhouette.svg");
-    mask-repeat: no-repeat;
-    mask-position: right center;
-    mask-size: cover;
-    -webkit-mask-image: url("/backgrounds/hero-silhouette.svg");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: right center;
-    -webkit-mask-size: cover;
-  }
-</style>
