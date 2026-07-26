@@ -9,11 +9,31 @@ const fields = [
 ] as const;
 ---
 
-<section id="contacto" class="bg-surface-secondary py-24">
-  <div class="mx-auto max-w-2xl px-6">
+<section id="contacto" class="relative overflow-hidden bg-surface-secondary py-20 sm:py-24 lg:py-28">
+  <div
+    class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl sm:h-96 sm:w-96"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute -bottom-32 -right-16 h-64 w-64 rounded-full bg-petrol/10 blur-3xl sm:h-80 sm:w-80"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-2xl px-6">
     <div class="reveal text-center">
-      <h2 class="font-heading text-3xl font-bold text-petrol sm:text-4xl">Inicie su transformación hoy</h2>
-      <p class="mx-auto mt-3 max-w-md font-body text-ink-secondary">
+      <span
+        class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 font-body text-xs font-semibold uppercase tracking-widest text-petrol"
+      >
+        <Icon name="lucide:message-circle" class="h-3.5 w-3.5 text-gold" />
+        Hablemos
+      </span>
+      <h2 class="mt-5 text-balance font-heading text-3xl font-bold leading-tight text-petrol sm:text-4xl lg:text-[2.75rem]">
+        Inicie su transformación <span class="text-gold">hoy</span>
+      </h2>
+      <div class="mx-auto mt-5 h-px w-16 bg-gold-light"></div>
+      <p class="mx-auto mt-5 max-w-md font-body text-ink-secondary sm:text-lg">
         Complete el formulario y uno de nuestros consultores senior se pondrá en contacto para una
         sesión diagnóstica gratuita.
       </p>
